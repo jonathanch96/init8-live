@@ -129,6 +129,32 @@ class SettingsTableSeeder extends Seeder
                 'group'        => 'Admin',
             ])->save();
         }
+
+        //custom
+        $setting = $this->findSetting('site.email');
+        if (!$setting->exists) {
+            $setting->fill([
+                'display_name' => 'Company Email',
+                'value'        => 'cs@init8.id',
+                'details'      => '',
+                'type'         => 'text',
+                'order'        => 6,
+                'group'        => 'Site',
+            ])->save();
+        }
+
+        $setting = $this->findSetting('site.address');
+        if (!$setting->exists) {
+            $setting->fill([
+                'display_name' => 'Company Address',
+                'value'        => 'Mall Taman Palem Lantai LG blok B no. 57
+                Cengkareng, Jakarta Barat 11730',
+                'details'      => '',
+                'type'         => 'text_area',
+                'order'        => 7,
+                'group'        => 'Site',
+            ])->save();
+        }
     }
 
     /**
