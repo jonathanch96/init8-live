@@ -38,7 +38,7 @@ class SettingsTableSeeder extends Seeder
         if (!$setting->exists) {
             $setting->fill([
                 'display_name' => __('voyager::seeders.settings.site.logo'),
-                'value'        => '',
+                'value'        => 'default/img/logo.png',
                 'details'      => '',
                 'type'         => 'image',
                 'order'        => 3,
@@ -152,6 +152,17 @@ class SettingsTableSeeder extends Seeder
                 'details'      => '',
                 'type'         => 'text_area',
                 'order'        => 7,
+                'group'        => 'Site',
+            ])->save();
+        }
+         $setting = $this->findSetting('site.phone');
+        if (!$setting->exists) {
+            $setting->fill([
+                'display_name' => 'Company Phone',
+                'value'        => '0878-8746-0528 | 0812-8450-1574',
+                'details'      => '',
+                'type'         => 'text',
+                'order'        => 8,
                 'group'        => 'Site',
             ])->save();
         }

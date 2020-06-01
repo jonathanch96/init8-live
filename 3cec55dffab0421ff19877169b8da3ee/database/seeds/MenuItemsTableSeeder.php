@@ -228,7 +228,7 @@ class MenuItemsTableSeeder extends Seeder
         $menuItem = MenuItem::firstOrNew([
             'menu_id' => $menu->id,
             'title'   => 'Tentang Kami',
-            'url'     => '#',
+            'url'     => 'about',
             'route'   => null,
         ]);
         if (!$menuItem->exists) {
